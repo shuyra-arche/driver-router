@@ -26,6 +26,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bc36b9bc9f9fd011eb63c44cdba19d47c4e77f4759cddb0c448b1d23d27abc1e"
 
 [[package]]
+name = "ipc"
+version = "0.1.0"
+source = "git+https://github.com/shuyra-arche/ipc.git?rev=29ad97dc08d9dfc4ea6578b1b77874261229b3b5#29ad97dc08d9dfc4ea6578b1b77874261229b3b5"
+dependencies = [
+ "env",
+ "resource",
+ "wire",
+]
+
+[[package]]
 name = "mold"
 version = "0.1.0"
 source = "git+https://github.com/shuyra-arche/mold.git?rev=f52501f4c91b686eded8b4bcd743b4e96084b7f9#f52501f4c91b686eded8b4bcd743b4e96084b7f9"
@@ -54,12 +64,43 @@ dependencies = [
 ]
 
 [[package]]
+name = "resource"
+version = "0.1.0"
+source = "git+https://github.com/shuyra-arche/resource.git?rev=dbc96834f50f094b5c386e54a0a2ae5560dcd7f8#dbc96834f50f094b5c386e54a0a2ae5560dcd7f8"
+dependencies = [
+ "env",
+ "erra",
+]
+
+[[package]]
 name = "router-api"
 version = "0.1.0"
 dependencies = [
  "env",
  "mold",
  "system-api",
+ "wire",
+]
+
+[[package]]
+name = "router-api"
+version = "0.1.0"
+source = "git+https://github.com/shuyra-arche/router.git?rev=94fec223f3c5df6c99a49527a65d016d88de3af4#94fec223f3c5df6c99a49527a65d016d88de3af4"
+dependencies = [
+ "env",
+ "mold",
+ "system-api",
+ "wire",
+]
+
+[[package]]
+name = "router-client"
+version = "0.1.0"
+dependencies = [
+ "env",
+ "ipc",
+ "resource",
+ "router-api 0.1.0 (git+https://github.com/shuyra-arche/router.git?rev=94fec223f3c5df6c99a49527a65d016d88de3af4)",
  "wire",
 ]
 
