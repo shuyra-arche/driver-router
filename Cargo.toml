@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
-members = ["api", "client"]
+members = ["api", "client", "server", "declaration"]
+exclude = ["tests"]
 
 [workspace.package]
 version = "0.1.0"
