@@ -1,0 +1,41 @@
+schema = 1
+id = "router"
+
+[loader]
+image = "router"
+space = "user"
+args = []
+stack = 0
+
+[[operator.namespace]]
+key = "service"
+placement = "shared"
+path = "router"
+scope = "subtree"
+ops = 279 # PART | UNPART | BIND | UNBIND | FIND
+permit = "public"
+
+[[operator.namespace.bindings]]
+name = "entry"
+mark = "13702911872889301267" # router_api::ENTRY_MARK
+view = 2 # env::Access::STORE
+permit = "public"
+
+[identity]
+aliases = []
+grants = []
+
+[control]
+creation = "startup"
+# Operator is a System bootstrap service, not a separate Unit.
+requires = ["hub"]
+after = ["hub"]
+ready = { signal = "9887014109901452468" } # unit::READY_MARK / router_api::READY_MARK
+ending = "resident"
+construction = []
+retirement = []
+groups = []
+guarded = false
+
+[supply]
+bindings = []
