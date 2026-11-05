@@ -1,8 +1,8 @@
 #![no_std]
 
-//! 线路由者（router）的装配声明。
+//! 线路由者（router）的兼容装配声明与构建合同。
 //! **U 态**：它只读 PLIC 的寄存器、claim/complete、铸孔、挂组，全都不需要 S 态；
-//! 这一份是本 Unit 的唯一 `UnitFile` 所有者。
+//! 当前运行策略由仓库根目录 `unit.toml` 持有；此处保留旧调用与迁移对照。
 
 use unit::{Ending, ImageBuild, UnitFile};
 
